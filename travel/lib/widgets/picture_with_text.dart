@@ -32,8 +32,6 @@ class PictureWithText extends StatelessWidget {
                   TextSpan(
                     text: ", Valentina ",
                     style: GoogleFonts.lato(
-                      color: Colors.black,
-                      fontSize: size.height * .02,
                       fontWeight: FontWeight.normal
                     ),
                   ),

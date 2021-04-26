@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:travel/widgets/forward_button.dart';
+import '../widgets/forward_button.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override
