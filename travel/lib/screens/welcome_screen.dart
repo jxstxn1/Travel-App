@@ -41,7 +41,7 @@ class WelcomeScreen extends StatelessWidget {
                         fontSize: deviceWidth * 0.055),
                   ),
                   SizedBox(
-                    height: deviceHeight * 0.02,
+                    height: deviceHeight * 0.01,
                   ),
                   Text(
                     "by exploring nature",
@@ -50,7 +50,7 @@ class WelcomeScreen extends StatelessWidget {
                         fontSize: deviceWidth * 0.055),
                   ),
                   SizedBox(
-                    height: deviceHeight * 0.1,
+                    height: deviceHeight * 0.08,
                   ),
                   TextButton(
                     onPressed: () {},
