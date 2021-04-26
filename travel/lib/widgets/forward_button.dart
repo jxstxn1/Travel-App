@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:travel/constants.dart';
-import 'package:travel/screens/home_screen.dart';
+import '../constants.dart';
+import '../screens/home_screen.dart';
 
 class ForwardButton extends StatefulWidget {
   @override
