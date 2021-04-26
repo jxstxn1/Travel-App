@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:travel/widgets/forward_button.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override
@@ -52,16 +53,14 @@ class WelcomeScreen extends StatelessWidget {
                   SizedBox(
                     height: deviceHeight * 0.08,
                   ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text("Justin bro"),
-                  ),
+                 ForwardButton(),
                   SizedBox(
                     height: deviceHeight * 0.09,
                   )
                 ],
               ),
             ),
+
           ],
         ),
       ),
