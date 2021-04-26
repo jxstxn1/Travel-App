@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travel/widgets/search_bar.dart';
+import '../widgets/search_with_button.dart';
 import '../constants.dart';
 import '../widgets/picture_with_text.dart';
 
@@ -10,14 +10,15 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: kDefaultBackgroundColor,
       body: Padding(
-        padding: EdgeInsets.fromLTRB(kDefaultPadding, kDefaultPadding * 3, kDefaultPadding, 0),
+        padding: EdgeInsets.fromLTRB(
+            kDefaultPadding, kDefaultPadding * 3, kDefaultPadding, 0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               PictureWithText(),
               SizedBox(height: size.height * .035),
-              SearchBar(),
+              SearchWithButton(),
             ],
           ),
         ),
