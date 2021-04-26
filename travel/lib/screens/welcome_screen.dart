@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../constants.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override
@@ -12,23 +13,56 @@ class WelcomeScreen extends StatelessWidget {
         child: Stack(
           children: <Widget>[
             Container(
-              height: double.infinity,
-              width: double.infinity,
+              height: deviceHeight,
+              width: deviceWidth,
               child: Image.asset('assets/images/welcome-screen-2.jpg',
                   fit: BoxFit.cover),
             ),
-            Positioned(
+            Container(
               width: deviceWidth,
-              child: Text(
-                "Explore the world",
-                style: GoogleFonts.lato(
-                    color: Colors.white,
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,
+              height: deviceHeight,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  Text(
+                    "Explore the world",
+                    style: GoogleFonts.lato(
+                        color: Colors.white,
+                        fontSize: deviceWidth * 0.084,
+                        fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(
+                    height: deviceHeight * 0.037,
+                  ),
+                  Text(
+                    "Make now your time to live a good life",
+                    style: GoogleFonts.lato(
+                        color: Color(0xfff2f2f2),
+                        fontSize: deviceWidth * 0.055),
+                  ),
+                  SizedBox(
+                    height: deviceHeight * 0.02,
+                  ),
+                  Text(
+                    "by exploring nature",
+                    style: GoogleFonts.lato(
+                        color: Color(0xfff2f2f2),
+                        fontSize: deviceWidth * 0.055),
+                  ),
+                  SizedBox(
+                    height: deviceHeight * 0.1,
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("Justin bro"),
+                  ),
+                  SizedBox(
+                    height: deviceHeight * 0.09,
+                  )
+                ],
               ),
-              bottom: deviceHeight * 0.32,
-            )
+            ),
           ],
         ),
       ),
