@@ -27,9 +27,10 @@ class WelcomeScreen extends StatelessWidget {
                   Text(
                     "Explore the world",
                     style: GoogleFonts.lato(
-                        color: Colors.white,
+                        color: Colors.white.withOpacity(.86),
                         fontSize: deviceWidth * 0.084,
-                        fontWeight: FontWeight.bold),
+                        fontWeight: FontWeight.bold,
+                    ),
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(
@@ -38,7 +39,7 @@ class WelcomeScreen extends StatelessWidget {
                   Text(
                     "Make now your time to live a good life",
                     style: GoogleFonts.lato(
-                        color: Color(0xfff2f2f2),
+                        color: Colors.white.withOpacity(.70),
                         fontSize: deviceWidth * 0.055),
                   ),
                   SizedBox(
@@ -47,7 +48,7 @@ class WelcomeScreen extends StatelessWidget {
                   Text(
                     "by exploring nature",
                     style: GoogleFonts.lato(
-                        color: Color(0xfff2f2f2),
+                        color: Colors.white.withOpacity(.70),
                         fontSize: deviceWidth * 0.055),
                   ),
                   SizedBox(
