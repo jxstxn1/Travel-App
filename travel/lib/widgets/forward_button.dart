@@ -3,7 +3,33 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:travel/constants.dart';
 import 'package:travel/screens/home_screen.dart';
 
-class ForwardButton extends StatelessWidget {
+class ForwardButton extends StatefulWidget {
+  @override
+  _ForwardButtonState createState() => _ForwardButtonState();
+}
+
+class _ForwardButtonState extends State<ForwardButton> with SingleTickerProviderStateMixin{
+  late AnimationController _animationController;
+  late Animation _animation;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    _animationController = AnimationController(vsync:this,duration: Duration(milliseconds: 1750));
+    _animationController.repeat(reverse: true);
+    _animation =  Tween(begin: 5.0,end: 12.5).animate(_animationController)..addListener((){
+      setState(() {
+      });
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -23,7 +49,7 @@ class ForwardButton extends StatelessWidget {
           ),
           boxShadow: [
             BoxShadow(
-              spreadRadius: 12.5,
+              spreadRadius: _animation.value,
               color: kDefaultBackgroundColor.withOpacity(.13),
             ),
           ],
