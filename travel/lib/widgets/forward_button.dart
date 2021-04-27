@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 import '../constants.dart';
 import '../screens/home_screen.dart';
 
@@ -8,19 +9,21 @@ class ForwardButton extends StatefulWidget {
   _ForwardButtonState createState() => _ForwardButtonState();
 }
 
-class _ForwardButtonState extends State<ForwardButton> with SingleTickerProviderStateMixin{
+class _ForwardButtonState extends State<ForwardButton>
+    with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation _animation;
 
   @override
   void initState() {
     // TODO: implement initState
-    _animationController = AnimationController(vsync:this,duration: Duration(milliseconds: 1750));
+    _animationController = AnimationController(
+        vsync: this, duration: Duration(milliseconds: 1750));
     _animationController.repeat(reverse: true);
-    _animation =  Tween(begin: 5.0,end: 12.5).animate(_animationController)..addListener((){
-      setState(() {
+    _animation = Tween(begin: 5.0, end: 12.5).animate(_animationController)
+      ..addListener(() {
+        setState(() {});
       });
-    });
     super.initState();
   }
 
@@ -34,11 +37,15 @@ class _ForwardButtonState extends State<ForwardButton> with SingleTickerProvider
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return InkWell(
-      onTap: () => Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (BuildContext context) => HomeScreen(),
-        ),
-      ),
+      onTap: () {
+        Navigator.of(context).pushReplacement(
+          PageRouteBuilder(
+            pageBuilder: (context, animation, _) {
+              return HomeScreen();
+            }, opaque: false
+          ),
+        );
+      },
       child: Container(
         height: size.height * .06,
         width: size.width * .13,
