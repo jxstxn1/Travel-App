@@ -35,7 +35,7 @@ class SearchBar extends StatelessWidget {
                 decoration: InputDecoration(
                   labelText: "search",
                   labelStyle: GoogleFonts.lato(
-                    fontSize: size.height * .0225,
+                    fontSize: size.height * .02,
 
                     color: Colors.grey,
                   ),

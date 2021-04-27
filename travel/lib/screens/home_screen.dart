@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel/widgets/top_nav_bar.dart';
 
 import '../constants.dart';
 import '../widgets/picture_with_text.dart';
@@ -31,18 +32,26 @@ class HomeScreen extends StatelessWidget {
             child: child,
           );
         },
-        child: Padding(
-          padding: EdgeInsets.fromLTRB(
-              kDefaultPadding, kDefaultPadding * 3, kDefaultPadding, 0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              PictureWithText(),
-              SizedBox(height: size.height * .035),
-              SearchWithButton(),
-              SizedBox(height: size.height * .035),
-            ],
-          ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.fromLTRB(
+                  kDefaultPadding, kDefaultPadding * 3, kDefaultPadding, 0),
+              child: PictureWithText(),
+            ),
+            SizedBox(height: size.height * .035),
+            Padding(
+              padding:
+                  EdgeInsets.fromLTRB(kDefaultPadding, 0, kDefaultPadding, 0),
+              child: SearchWithButton(),
+            ),
+            SizedBox(height: size.height * .01),
+            Padding(
+              padding: EdgeInsets.fromLTRB(kDefaultPadding, 0, 0, 0),
+              child: TopNavigationBar(),
+            ),
+          ],
         ),
       ),
     );
