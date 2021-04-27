@@ -1,16 +1,50 @@
 import 'package:flutter/material.dart';
 import 'package:travel/widgets/top_nav_bar.dart';
+import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 
 import '../constants.dart';
 import '../widgets/picture_with_text.dart';
 import '../widgets/search_with_button.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: kDefaultBackgroundColor,
+      bottomNavigationBar: SnakeNavigationBar.color(
+        behaviour: SnakeBarBehaviour.pinned,
+        snakeShape: SnakeShape.indicator,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(25)),
+        ),
+        padding: EdgeInsets.zero,
+        snakeViewColor: Colors.black,
+        unselectedItemColor: Colors.blueGrey,
+        selectedItemColor: Colors.red,
+        currentIndex: currentIndex,
+        onTap: (index) => setState(() => currentIndex = index),
+        items: [
+          const BottomNavigationBarItem(
+              icon: Icon(Icons.notifications), label: 'tickets'),
+          const BottomNavigationBarItem(
+              icon: Icon(Icons.calendar_today), label: 'calendar'),
+          const BottomNavigationBarItem(icon: Icon(Icons.home), label: 'home'),
+          const BottomNavigationBarItem(
+              icon: Icon(Icons.close), label: 'microphone'),
+          const BottomNavigationBarItem(
+              icon: Icon(Icons.search), label: 'search')
+        ],
+        selectedLabelStyle: const TextStyle(fontSize: 14),
+        unselectedLabelStyle: const TextStyle(fontSize: 10),
+      ),
       body: TweenAnimationBuilder(
         tween: Tween(begin: 0.0, end: 1.0),
         duration: Duration(milliseconds: 1500),

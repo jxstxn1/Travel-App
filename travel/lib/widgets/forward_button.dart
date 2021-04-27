@@ -39,10 +39,10 @@ class _ForwardButtonState extends State<ForwardButton>
       onTap: () {
         Navigator.of(context).pushReplacement(
           PageRouteBuilder(
-            pageBuilder: (context, animation, _) {
-              return HomeScreen();
-            }, opaque: false
-          ),
+              pageBuilder: (context, animation, _) {
+                return HomeScreen();
+              },
+              opaque: false),
         );
       },
       child: Container(

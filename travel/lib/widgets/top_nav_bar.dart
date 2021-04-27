@@ -16,7 +16,7 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
     _Categories('Culture', false),
   ];
 
-  void _tapHandler(int index){
+  void _tapHandler(int index) {
     _categories.forEach((element) {
       element.selected = false;
     });
@@ -48,19 +48,19 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
         SizedBox(
           height: size.height * .009,
         ),
-        selected
-            ? Container(
-                alignment: Alignment.centerLeft,
-                width: size.width * .06,
-                height: size.height * .01,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(15.0),
-                  ),
-                  color: kSecondaryColor.withOpacity(1),
-                ),
-              )
-            : Container(),
+        // selected
+        //     ? Container(
+        //         alignment: Alignment.centerLeft,
+        //         width: size.width * .06,
+        //         height: size.height * .01,
+        //         decoration: BoxDecoration(
+        //           borderRadius: BorderRadius.all(
+        //             Radius.circular(15.0),
+        //           ),
+        //           color: kSecondaryColor.withOpacity(1),
+        //         ),
+        //       )
+        //     : Container(),
       ],
     );
   }
