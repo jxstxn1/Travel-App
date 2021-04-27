@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel/widgets/item_list.dart';
 import 'package:travel/widgets/top_nav_bar.dart';
 
 import '../constants.dart';
@@ -57,6 +58,10 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
               padding: EdgeInsets.fromLTRB(kDefaultPadding, 0, 0, 0),
               child: TopNavigationBar(),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(kDefaultPadding, 0, 0, 0),
+              child: ItemList(),
             ),
           ],
         ),
