@@ -34,16 +34,14 @@ class HomeScreen extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.fromLTRB(
               kDefaultPadding, kDefaultPadding * 3, kDefaultPadding, 0),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                PictureWithText(),
-                SizedBox(height: size.height * .035),
-                SearchWithButton(),
-                SizedBox(height: size.height * .035),
-              ],
-            ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              PictureWithText(),
+              SizedBox(height: size.height * .035),
+              SearchWithButton(),
+              SizedBox(height: size.height * .035),
+            ],
           ),
         ),
       ),
