@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../constants.dart';
-import '../models/Items.dart';
+import '../models/items.dart';
 import '../widgets/bookmark.dart';
 
 class Item extends StatelessWidget {
