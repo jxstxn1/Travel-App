@@ -13,7 +13,7 @@ class PictureWithText extends StatelessWidget {
             CircleAvatar(
               backgroundColor: Colors.white,
               backgroundImage: AssetImage(
-                "assets/images/ali.jpeg",
+                "assets/images/profile_picture.jpg",
               ),
               radius: size.height * .0275,
             ),
@@ -30,7 +30,7 @@ class PictureWithText extends StatelessWidget {
                 ),
                 children: <TextSpan>[
                   TextSpan(
-                    text: ", Yash Jain ",
+                    text: ", Valentina ",
                     style: GoogleFonts.lato(
                       fontWeight: FontWeight.normal
                     ),
