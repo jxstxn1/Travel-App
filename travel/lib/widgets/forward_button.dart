@@ -16,7 +16,6 @@ class _ForwardButtonState extends State<ForwardButton>
 
   @override
   void initState() {
-    // TODO: implement initState
     _animationController = AnimationController(
         vsync: this, duration: Duration(milliseconds: 1750));
     _animationController.repeat(reverse: true);

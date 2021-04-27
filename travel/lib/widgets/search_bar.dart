@@ -28,22 +28,22 @@ class SearchBar extends StatelessWidget {
               width: size.width * .065,
             ),
             SizedBox(
-              width: kDefaultPadding / 1.5,
+              width: kDefaultPadding / 1.2,
             ),
             Expanded(
               child: TextFormField(
                 decoration: InputDecoration(
-                  labelText: "search",
-                  labelStyle: GoogleFonts.lato(
+                  hintText: "search",
+                  hintStyle: GoogleFonts.lato(
                     fontSize: size.height * .02,
-
-                    color: Colors.grey,
+                    color: Colors.grey[600],
                   ),
                   border: InputBorder.none,
                   focusedBorder: InputBorder.none,
                   enabledBorder: InputBorder.none,
                   errorBorder: InputBorder.none,
                   disabledBorder: InputBorder.none,
+                  errorMaxLines: 2,
                 ),
               ),
             ),
