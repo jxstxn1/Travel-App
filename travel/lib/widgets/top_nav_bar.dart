@@ -25,43 +25,48 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
   }
 
   Widget textBuild(String text, bool selected, Size size, int index) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            InkWell(
-              onTap: () => _tapHandler(index),
-              child: Text(
-                text,
-                style: GoogleFonts.lato(
-                    color: kSecondaryColor.withOpacity(1),
-                    fontWeight: selected ? FontWeight.bold : FontWeight.normal,
-                    fontSize: size.height * .02),
-              ),
-            ),
-            SizedBox(
-              width: size.width * .1,
-            ),
-          ],
-        ),
-        SizedBox(
-          height: size.height * .009,
-        ),
-        selected
-            ? Container(
-                alignment: Alignment.centerLeft,
-                width: size.width * .06,
-                height: size.height * .01,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(15.0),
-                  ),
-                  color: kSecondaryColor.withOpacity(1),
+    return Container(
+      height: size.height * .05,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            children: [
+              InkWell(
+                onTap: () => _tapHandler(index),
+                child: Text(
+                  text,
+                  style: GoogleFonts.lato(
+                      color: kSecondaryColor.withOpacity(1),
+                      fontWeight: selected ? FontWeight.bold : FontWeight.normal,
+                      fontSize: size.height * .02),
                 ),
-              )
-            : Container(),
-      ],
+              ),
+              SizedBox(
+                width: size.width * .1,
+              ),
+            ],
+          ),
+          SizedBox(
+            height: size.height * .009,
+          ),
+          selected
+              ? Container(
+                  alignment: Alignment.centerLeft,
+                  width: size.width * .06,
+                  height: size.height * .01,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(15.0),
+                    ),
+                    color: kSecondaryColor.withOpacity(1),
+                  ),
+                )
+              : Container(height: size.height * .01),
+        ],
+      ),
     );
   }
 
@@ -69,18 +74,21 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      height: size.height * .1,
       width: double.infinity,
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             for (int i = 0; i < _categories.length; i++)
-              textBuild(
-                _categories[i].name,
-                _categories[i].selected,
-                size,
-                i,
+              Flexible(
+                child: textBuild(
+                  _categories[i].name,
+                  _categories[i].selected,
+                  size,
+                  i,
+                ),
               ),
           ],
         ),

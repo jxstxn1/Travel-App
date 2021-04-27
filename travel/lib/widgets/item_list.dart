@@ -25,12 +25,18 @@ class ItemList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      child: Row(
-        children: <Widget>[
-          for(int i = 0; i<_items[0].length; i++) Item(item: _items[0][i],),
-        ],
+      child: Container(
+        height: size.height * .38,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            for(int i = 0; i<_items[0].length; i++) Item(item: _items[0][i],),
+          ],
+        ),
       ),
     );
   }
