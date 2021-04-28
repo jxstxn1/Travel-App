@@ -20,13 +20,12 @@ class Item extends StatelessWidget {
           height: size.height * .38,
           width: size.width * .55,
           decoration: BoxDecoration(
+            color: kDefaultBackgroundColor,
             borderRadius: BorderRadius.all(
               Radius.circular(22.5),
             ),
             image: DecorationImage(
-              image: AssetImage(item.image),
-              fit: BoxFit.cover,
-            ),
+                image: AssetImage(item.image), fit: BoxFit.cover),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -51,15 +50,15 @@ class Item extends StatelessWidget {
                     Text(
                       item.title,
                       style: GoogleFonts.lato(
-                          color: kDefaultBackgroundColor.withOpacity(.86),
-                          fontSize: size.height * .0175,
+                          color: Colors.white,
+                          fontSize: size.height * .02,
                           fontWeight: FontWeight.bold),
                       textAlign: TextAlign.left,
                     ),
                     Text(
                       item.location,
                       style: GoogleFonts.lato(
-                          color: kDefaultBackgroundColor.withOpacity(.86),
+                          color: Colors.white,
                           fontSize: size.height * .0175,
                           fontWeight: FontWeight.bold),
                       textAlign: TextAlign.left,

@@ -37,8 +37,9 @@ class AdventureTab extends StatelessWidget {
 
 class NewTab extends StatelessWidget {
   final List<Items> _items = [
-    Items('Brandenburg Gate', 'Berlin', 'assets/images/forest.jpg'),
-    Items('Coliseum', 'Rom', 'assets/images/olympic.jpeg'),
+    Items('Brandenburg Gate', 'Berlin', 'assets/images/brandenburg_gate.jpg'),
+    Items('Mount Everest', 'Nepal', 'assets/images/mount_everest.jpeg'),
+    Items('Colosseum', 'Rom', 'assets/images/colosseum1.jpg'),
   ];
 
   @override
@@ -67,7 +68,7 @@ class TrendingTab extends StatelessWidget {
   final List<Items> _items = [
     Items('Amsterdam', 'Netherlands',
         'assets/images/welcome-screen-landscape-1.jpg'),
-    Items('Madeira', 'Portugal', 'assets/images/olympic.jpeg'),
+    Items('Madeira', 'Portugal', 'assets/images/madeira.jpg'),
   ];
 
   @override
@@ -94,8 +95,8 @@ class TrendingTab extends StatelessWidget {
 
 class CultureTab extends StatelessWidget {
   final List<Items> _items = [
-    Items('Machu Picchu', 'Peru', 'assets/images/forest.jpg'),
-    Items('Amritsar', 'Punjab', 'assets/images/olympic.jpeg'),
+    Items('Machu Picchu', 'Peru', 'assets/images/machu_picchu1.jpg'),
+    Items('Amritsar', 'Punjab', 'assets/images/amritsar2.jpg'),
   ];
 
   @override
