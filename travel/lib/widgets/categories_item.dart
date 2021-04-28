@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../constants.dart';
 import '../models/categories.dart';
 
 class CategoriesItem extends StatelessWidget {
@@ -17,7 +19,14 @@ class CategoriesItem extends StatelessWidget {
             Container(
               height: size.height * .07,
               width: size.width * .15,
-              color: Colors.red,
+              padding: EdgeInsets.all(kDefaultPadding / 1.5),
+              decoration: BoxDecoration(
+                color: Colors.grey.withOpacity(.175),
+                borderRadius: BorderRadius.all(Radius.circular(15.0),),
+              ),
+              child: Center(
+                child: SvgPicture.asset(categories.asset, ),
+              ),
             ),
             SizedBox(
               height: size.height * .0115,
@@ -28,6 +37,7 @@ class CategoriesItem extends StatelessWidget {
             ),
           ],
         ),
+        SizedBox(width: size.width * .1,)
       ],
     );
   }
