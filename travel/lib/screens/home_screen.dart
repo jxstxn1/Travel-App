@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:async';
+import 'package:titled_navigation_bar/titled_navigation_bar.dart';
 
 import '../constants.dart';
 import '../widgets/categories_list.dart';
@@ -57,28 +58,80 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    int currentIndex = 0;
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: TitledBottomNavigationBar(
+        currentIndex: currentIndex,
+        reverse: true,
+        curve: Curves.easeInBack,
+        activeColor: Colors.black,
+        onTap: (index) {
+          print(index);
+        },
         items: [
-          BottomNavigationBarItem(
-            label: "",
-            icon: SvgPicture.asset("assets/icons/search.svg"),
+          TitledNavigationBarItem(
+            icon: Icon(Icons.home),
+            title: Text(
+              "Home",
+              style: GoogleFonts.lato(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: size.height * 0.0190),
+            ),
           ),
-          BottomNavigationBarItem(
-            label: "",
-            icon: SvgPicture.asset("assets/icons/search.svg"),
+          TitledNavigationBarItem(
+            icon: Icon(Icons.search),
+            title: Text(
+              "Search",
+              style: GoogleFonts.lato(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: size.height * 0.0190),
+            ),
           ),
-          BottomNavigationBarItem(
-            label: "",
-            icon: SvgPicture.asset("assets/icons/search.svg"),
+          TitledNavigationBarItem(
+            icon: Icon(Icons.navigation),
+            title: Text(
+              "Navigation",
+              style: GoogleFonts.lato(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: size.height * 0.0190),
+            ),
           ),
-          BottomNavigationBarItem(
-            label: "",
-            icon: SvgPicture.asset("assets/icons/search.svg"),
+          TitledNavigationBarItem(
+            icon: Icon(Icons.settings),
+            title: Text(
+              "Settings",
+              style: GoogleFonts.lato(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: size.height * 0.0190),
+            ),
           ),
         ],
       ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   items: [
+      //     BottomNavigationBarItem(
+      //       label: "",
+      //       icon: SvgPicture.asset("assets/icons/search.svg"),
+      //     ),
+      //     BottomNavigationBarItem(
+      //       label: "",
+      //       icon: SvgPicture.asset("assets/icons/search.svg"),
+      //     ),
+      //     BottomNavigationBarItem(
+      //       label: "",
+      //       icon: SvgPicture.asset("assets/icons/search.svg"),
+      //     ),
+      //     BottomNavigationBarItem(
+      //       label: "",
+      //       icon: SvgPicture.asset("assets/icons/search.svg"),
+      //     ),
+      //   ],
+      // ),
       backgroundColor: kDefaultBackgroundColor,
       body: TweenAnimationBuilder(
         tween: Tween(begin: 0.0, end: 1.0),
@@ -92,7 +145,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Colors.white,
                   Colors.white,
                   Colors.transparent,
-                  Colors.transparent
+                  Colors.transparent,
                 ],
                 stops: [0.0, 0.55, 0.6, 1.0],
                 center: FractionalOffset(0.5, .85),
