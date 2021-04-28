@@ -1,21 +1,59 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'dart:async';
 
 import '../constants.dart';
 import '../widgets/categories_list.dart';
+import '../widgets/top_nav_bar.dart';
 import '../widgets/item_list.dart';
 import '../widgets/picture_with_text.dart';
 import '../widgets/search_with_button.dart';
-import '../widgets/top_nav_bar.dart';
+
+StreamController<int> streamController = StreamController<int>();
 
 class HomeScreen extends StatefulWidget {
+  final Stream<int> stream;
+
+  HomeScreen(this.stream);
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    widget.stream.listen((index) {
+      refreshScreen(index);
+    });
+  }
+
+  void refreshScreen(int index) {
+    setState(() {
+      currentIndex = index;
+    });
+  }
+
+  Widget tabSelector() {
+    switch (currentIndex) {
+      case 0:
+        TopNavigationBar();
+        return AdventureTab();
+      case 1:
+        TopNavigationBar();
+        return NewTab();
+      case 2:
+        TopNavigationBar();
+        return TrendingTab();
+      case 3:
+        TopNavigationBar();
+        return CultureTab();
+    }
+    return Container();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(height: size.height * .0175),
             Padding(
               padding: EdgeInsets.fromLTRB(kDefaultPadding, 0, 0, 0),
-              child: ItemList(),
+              child: tabSelector(),
             ),
             SizedBox(height: size.height * .035),
             Padding(

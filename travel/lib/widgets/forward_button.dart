@@ -40,7 +40,7 @@ class _ForwardButtonState extends State<ForwardButton>
         Navigator.of(context).pushReplacement(
           PageRouteBuilder(
               pageBuilder: (context, animation, _) {
-                return HomeScreen();
+                return HomeScreen(streamController.stream);
               },
               opaque: false),
         );

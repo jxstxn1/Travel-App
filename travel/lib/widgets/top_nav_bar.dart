@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../constants.dart';
+import '../screens/home_screen.dart';
 
 class TopNavigationBar extends StatefulWidget {
   @override
@@ -21,6 +22,7 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
       element.selected = false;
     });
     _categories[index].selected = true;
+    streamController.add(index);
     setState(() {});
   }
 
@@ -40,7 +42,8 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
                   text,
                   style: GoogleFonts.lato(
                       color: kSecondaryColor.withOpacity(1),
-                      fontWeight: selected ? FontWeight.bold : FontWeight.normal,
+                      fontWeight:
+                          selected ? FontWeight.bold : FontWeight.normal,
                       fontSize: size.height * .02),
                 ),
               ),

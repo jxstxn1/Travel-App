@@ -4,7 +4,7 @@ import 'package:travel/widgets/categories_item.dart';
 import '../models/categories.dart';
 
 class CategoriesList extends StatelessWidget {
-  List<Categories> _categories = [
+  final List<Categories> _categories = [
     Categories('Forest', 'assets/icons/palm-tree.svg'),
     Categories('Mountain', 'assets/icons/mountain.svg'),
     Categories('Camp', 'assets/icons/camping.svg'),
