@@ -66,6 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
         reverse: true,
         curve: Curves.easeInBack,
         activeColor: Colors.black,
+        inactiveColor: Colors.grey,
         onTap: (index) {
           print(index);
         },
@@ -112,26 +113,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   items: [
-      //     BottomNavigationBarItem(
-      //       label: "",
-      //       icon: SvgPicture.asset("assets/icons/search.svg"),
-      //     ),
-      //     BottomNavigationBarItem(
-      //       label: "",
-      //       icon: SvgPicture.asset("assets/icons/search.svg"),
-      //     ),
-      //     BottomNavigationBarItem(
-      //       label: "",
-      //       icon: SvgPicture.asset("assets/icons/search.svg"),
-      //     ),
-      //     BottomNavigationBarItem(
-      //       label: "",
-      //       icon: SvgPicture.asset("assets/icons/search.svg"),
-      //     ),
-      //   ],
-      // ),
       backgroundColor: kDefaultBackgroundColor,
       body: TweenAnimationBuilder(
         tween: Tween(begin: 0.0, end: 1.0),
