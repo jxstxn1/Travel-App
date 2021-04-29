@@ -71,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
       resizeToAvoidBottomInset: false,
       bottomNavigationBar: DotNavigationBar(
         margin: EdgeInsets.symmetric(
-            horizontal: size.width * 0.05, vertical: size.height * 0.01),
+            horizontal: size.width * 0.05, vertical: size.height * 0.001),
         unselectedItemColor: Colors.grey,
         currentIndex: _SelectedTab.values.indexOf(_selectedTab),
         onTap: _handleIndexChanged,

@@ -111,7 +111,7 @@ class _ItemState extends State<Item> {
                             kDefaultPadding,
                             0,
                             kDefaultPadding,
-                            kDefaultPadding,
+                            size.height * 0.001,
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
