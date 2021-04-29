@@ -29,46 +29,48 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
   Widget textBuild(String text, bool selected, Size size, int index) {
     return Container(
       height: size.height * .15,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Row(
-            children: [
-              InkWell(
-                onTap: () => _tapHandler(index),
-                child: Text(
-                  text,
-                  style: GoogleFonts.lato(
-                      color: kSecondaryColor.withOpacity(1),
-                      fontWeight:
-                          selected ? FontWeight.bold : FontWeight.normal,
-                      fontSize: size.height * .02),
-                ),
-              ),
-              SizedBox(
-                width: size.width * .1,
-              ),
-            ],
-          ),
-          SizedBox(
-            height: size.height * .009,
-          ),
-          selected
-              ? Container(
-                  alignment: Alignment.centerLeft,
-                  width: size.width * .06,
-                  height: size.height * .01,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(15.0),
-                    ),
-                    color: kSecondaryColor.withOpacity(1),
+      child: IntrinsicHeight(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Row(
+              children: [
+                InkWell(
+                  onTap: () => _tapHandler(index),
+                  child: Text(
+                    text,
+                    style: GoogleFonts.lato(
+                        color: kSecondaryColor.withOpacity(1),
+                        fontWeight:
+                            selected ? FontWeight.bold : FontWeight.normal,
+                        fontSize: size.height * .02),
                   ),
-                )
-              : Container(height: size.height * .01),
-        ],
+                ),
+                SizedBox(
+                  width: size.width * .1,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: size.height * .009,
+            ),
+            selected
+                ? Container(
+                    alignment: Alignment.centerLeft,
+                    width: size.width * .06,
+                    height: size.height * .01,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(15.0),
+                      ),
+                      color: kSecondaryColor.withOpacity(1),
+                    ),
+                  )
+                : Container(height: size.height * .01),
+          ],
+        ),
       ),
     );
   }

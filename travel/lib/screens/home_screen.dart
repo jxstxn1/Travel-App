@@ -125,24 +125,32 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         child: SafeArea(
           child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: EdgeInsets.fromLTRB(
-                    kDefaultPadding, kDefaultPadding, kDefaultPadding, 0),
-                child: PictureWithText(),
+              Flexible(
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(
+                      kDefaultPadding, kDefaultPadding, kDefaultPadding, 0),
+                  child: PictureWithText(),
+                ),
               ),
               SizedBox(height: size.height * .035),
-              Padding(
-                padding:
-                    EdgeInsets.fromLTRB(kDefaultPadding, 0, kDefaultPadding, 0),
-                child: SearchWithButton(),
+              Flexible(
+                child: Padding(
+                  padding:
+                      EdgeInsets.fromLTRB(kDefaultPadding, 0, kDefaultPadding, 0),
+                  child: SearchWithButton(),
+                ),
               ),
               SizedBox(height: size.height * .035),
-              Expanded(
+              Flexible(
                 child: Padding(
                   padding: EdgeInsets.fromLTRB(kDefaultPadding, 0, 0, 0),
-                  child: TopNavigationBar(),
+                  child: Container(
+                    height: size.height * .10,
+                      child: TopNavigationBar()),
                 ),
               ),
               SizedBox(height: size.height * .0175),
@@ -150,14 +158,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: EdgeInsets.fromLTRB(kDefaultPadding, 0, 0, 0),
                 child: tabSelector(),
               ),
-              SizedBox(height: size.height * .025),
-              Padding(
-                padding: EdgeInsets.fromLTRB(kDefaultPadding, 0, 0, 0),
-                child: Text(
-                  'Categories',
-                  style: GoogleFonts.lato(
-                    fontWeight: FontWeight.bold,
-                    fontSize: size.height * .0185,
+              SizedBox(height: size.height * .035),
+              Flexible(
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(kDefaultPadding, 0, 0, 0),
+                  child: Text(
+                    'Categories',
+                    style: GoogleFonts.lato(
+                      fontWeight: FontWeight.bold,
+                      fontSize: size.height * .0185,
+                    ),
                   ),
                 ),
               ),
