@@ -28,7 +28,7 @@ class _TopNavigationBarState extends State<TopNavigationBar> {
 
   Widget textBuild(String text, bool selected, Size size, int index) {
     return Container(
-      height: size.height * .05,
+      height: size.height * .15,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,

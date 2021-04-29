@@ -131,13 +131,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   kDefaultPadding, kDefaultPadding * 3, kDefaultPadding, 0),
               child: PictureWithText(),
             ),
-            SizedBox(height: size.height * .035),
+            SizedBox(height: size.height * .025),
             Padding(
               padding:
                   EdgeInsets.fromLTRB(kDefaultPadding, 0, kDefaultPadding, 0),
               child: SearchWithButton(),
             ),
-            SizedBox(height: size.height * .035),
+            SizedBox(height: size.height * .025),
             Flexible(
               child: Padding(
                 padding: EdgeInsets.fromLTRB(kDefaultPadding, 0, 0, 0),
@@ -149,7 +149,7 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: EdgeInsets.fromLTRB(kDefaultPadding, 0, 0, 0),
               child: tabSelector(),
             ),
-            SizedBox(height: size.height * .035),
+            SizedBox(height: size.height * .025),
             Padding(
               padding: EdgeInsets.fromLTRB(kDefaultPadding, 0, 0, 0),
               child: Text(
@@ -160,7 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-            SizedBox(height: size.height * .03),
+            SizedBox(height: size.height * .025),
             Padding(
               padding: EdgeInsets.fromLTRB(kDefaultPadding, 0, 0, 0),
               child: CategoriesList(),
