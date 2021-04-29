@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:async';
-import 'package:titled_navigation_bar/titled_navigation_bar.dart';
+import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 
 import '../constants.dart';
 import '../widgets/categories_list.dart';
@@ -12,6 +11,7 @@ import '../widgets/picture_with_text.dart';
 import '../widgets/search_with_button.dart';
 
 StreamController<int> streamController = StreamController<int>();
+enum _SelectedTab { home, favorite, search, person }
 
 class HomeScreen extends StatefulWidget {
   final Stream<int> stream;
@@ -56,61 +56,48 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container();
   }
 
+  var _selectedTab = _SelectedTab.home;
+
+  void _handleIndexChanged(int i) {
+    setState(() {
+      _selectedTab = _SelectedTab.values[i];
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    int currentIndex = 0;
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      bottomNavigationBar: TitledBottomNavigationBar(
-        currentIndex: currentIndex,
-        reverse: true,
-        curve: Curves.easeInBack,
-        activeColor: Colors.black,
-        inactiveColor: Colors.grey,
-        onTap: (index) {
-          print(index);
-        },
+      bottomNavigationBar: DotNavigationBar(
+        margin: EdgeInsets.symmetric(
+            horizontal: size.width * 0.05, vertical: size.height * 0.01),
+        unselectedItemColor: Colors.grey,
+        currentIndex: _SelectedTab.values.indexOf(_selectedTab),
+        onTap: _handleIndexChanged,
         items: [
-          TitledNavigationBarItem(
+          /// Home
+          DotNavigationBarItem(
             icon: Icon(Icons.home),
-            title: Text(
-              "Home",
-              style: GoogleFonts.lato(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: size.height * 0.0190),
-            ),
+            selectedColor: Colors.black,
           ),
-          TitledNavigationBarItem(
+
+          /// Likes
+          DotNavigationBarItem(
             icon: Icon(Icons.search),
-            title: Text(
-              "Search",
-              style: GoogleFonts.lato(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: size.height * 0.0190),
-            ),
+            selectedColor: Colors.black,
           ),
-          TitledNavigationBarItem(
+
+          /// Search
+          DotNavigationBarItem(
             icon: Icon(Icons.navigation),
-            title: Text(
-              "Navigation",
-              style: GoogleFonts.lato(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: size.height * 0.0190),
-            ),
+            selectedColor: Colors.black,
           ),
-          TitledNavigationBarItem(
+
+          /// Profile
+          DotNavigationBarItem(
             icon: Icon(Icons.settings),
-            title: Text(
-              "Settings",
-              style: GoogleFonts.lato(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: size.height * 0.0190),
-            ),
+            selectedColor: Colors.black,
           ),
         ],
       ),
