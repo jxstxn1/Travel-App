@@ -61,6 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
     int currentIndex = 0;
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       bottomNavigationBar: TitledBottomNavigationBar(
         currentIndex: currentIndex,
         reverse: true,
