@@ -49,7 +49,7 @@ class _ItemState extends State<Item> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Shimmer(
-          duration: Duration(seconds: 2),
+          duration: Duration(milliseconds: 300),
           interval: Duration(seconds: 0),
           enabled: isShimmerEnabled,
           color: Colors.white,
