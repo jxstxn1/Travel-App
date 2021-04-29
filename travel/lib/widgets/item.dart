@@ -50,7 +50,7 @@ class _ItemState extends State<Item> {
       children: [
         Shimmer(
           duration: Duration(milliseconds: 300),
-          interval: Duration(seconds: 0),
+          interval: Duration(milliseconds: 300),
           enabled: isShimmerEnabled,
           color: Colors.white,
           child: isShimmerEnabled
