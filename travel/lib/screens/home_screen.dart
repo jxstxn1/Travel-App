@@ -134,7 +134,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     kDefaultPadding, kDefaultPadding, kDefaultPadding, 0),
                 child: PictureWithText(),
               ),
-              SizedBox(height: size.height * .035),
+              SizedBox(height: size.height * .029),
               Padding(
                 padding:
                     EdgeInsets.fromLTRB(kDefaultPadding, 0, kDefaultPadding, 0),

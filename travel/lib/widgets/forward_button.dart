@@ -46,8 +46,8 @@ class _ForwardButtonState extends State<ForwardButton>
         );
       },
       child: Container(
-        height: size.height * .06,
-        width: size.width * .13,
+        height: size.height * .066,
+        width: size.height * .066,
         decoration: BoxDecoration(
           color: kDefaultBackgroundColor.withOpacity(.96),
           borderRadius: BorderRadius.all(
