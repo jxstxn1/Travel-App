@@ -9,7 +9,7 @@ class SearchWithButton extends StatelessWidget {
     return Row(
       children: [
         SearchBar(),
-        SizedBox(width: size.width * .1,),
+        SizedBox(width: size.width * .08,),
         FilterButton()
       ],
     );

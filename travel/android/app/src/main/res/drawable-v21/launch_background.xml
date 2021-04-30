@@ -3,7 +3,4 @@
     <item>
         <bitmap android:gravity="fill" android:src="@drawable/background"/>
     </item>
-    <item>
-        <bitmap android:gravity="clip_horizontal" android:src="@drawable/splash"/>
-    </item>
 </layer-list>
