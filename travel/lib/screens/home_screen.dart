@@ -104,7 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: kDefaultBackgroundColor,
       body: TweenAnimationBuilder(
         tween: Tween(begin: 0.0, end: 1.0),
-        duration: Duration(milliseconds: 2000),
+        duration: Duration(milliseconds: 600),
         builder: (context, double? value, child) {
           return ShaderMask(
             shaderCallback: (rect) {
