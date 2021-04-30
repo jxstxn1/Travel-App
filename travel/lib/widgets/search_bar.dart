@@ -43,7 +43,6 @@ class SearchBar extends StatelessWidget {
                   enabledBorder: InputBorder.none,
                   errorBorder: InputBorder.none,
                   disabledBorder: InputBorder.none,
-                  errorMaxLines: 2,
                 ),
               ),
             ),

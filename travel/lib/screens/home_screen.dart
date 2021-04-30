@@ -129,28 +129,23 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Flexible(
-                child: Padding(
-                  padding: EdgeInsets.fromLTRB(
-                      kDefaultPadding, kDefaultPadding, kDefaultPadding, 0),
-                  child: PictureWithText(),
-                ),
+              Padding(
+                padding: EdgeInsets.fromLTRB(
+                    kDefaultPadding, kDefaultPadding, kDefaultPadding, 0),
+                child: PictureWithText(),
               ),
               SizedBox(height: size.height * .035),
-              Flexible(
-                child: Padding(
-                  padding:
-                      EdgeInsets.fromLTRB(kDefaultPadding, 0, kDefaultPadding, 0),
-                  child: SearchWithButton(),
-                ),
+              Padding(
+                padding:
+                    EdgeInsets.fromLTRB(kDefaultPadding, 0, kDefaultPadding, 0),
+                child: SearchWithButton(),
               ),
               SizedBox(height: size.height * .035),
               Flexible(
                 child: Padding(
                   padding: EdgeInsets.fromLTRB(kDefaultPadding, 0, 0, 0),
                   child: Container(
-                    height: size.height * .10,
-                      child: TopNavigationBar()),
+                      height: size.height * .10, child: TopNavigationBar()),
                 ),
               ),
               SizedBox(height: size.height * .0175),
